@@ -30,4 +30,8 @@ class User extends Authenticatable
     public function postagens () {
         return $this->hasMany('App\Postagem', 'id_usuario');
     }
+
+    public function respostas () {
+        return $this->hasMany('App\Resposta', 'id_usuario');
+    }
 }

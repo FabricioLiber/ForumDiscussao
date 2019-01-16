@@ -15,7 +15,8 @@ class CreatePostagensTable extends Migration
     {
         Schema::create('postagens', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('titulo');
+            $table->string('descricao');
         });
     }
 

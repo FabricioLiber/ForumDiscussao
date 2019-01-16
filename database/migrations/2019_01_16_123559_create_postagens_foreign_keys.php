@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddForeignKeyToPostagem extends Migration
+class CreatePostagensForeignKeys extends Migration
 {
     /**
      * Run the migrations.
@@ -15,9 +15,15 @@ class AddForeignKeyToPostagem extends Migration
     {
         Schema::table('postagens', function (Blueprint $table) {
             //
-            $table->string('titulo');
+
+            // Foreign Key User
             $table->integer('id_usuario');
-//          $table->foreign('id_usuario')->references('id')->on('users');
+            $table->foreign('id_usuario')->references('id')->on('users');
+
+            // Foreign Key Tema
+            $table->integer('id_tema');
+            $table->foreign('id_tema')->references('id')->on('temas');
+            $table->timestamps();
         });
     }
 

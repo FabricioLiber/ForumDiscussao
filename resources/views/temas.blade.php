@@ -1,44 +1,36 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-    <title>Laravel</title>
+@section('title', 'Temas')
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+@section('content')
+    <table class="table table-striped">
+        <thead>
+            <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Tema</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Opções</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($temas as $tema)
+                <tr>
+                    <th scope="row">{{$tema->id}}</th>
+                    <td>{{$tema->nome}}</td>
+                    <td>{{$tema->descricao}}</td>
+                    <td>
+                        <i class="fas fa-edit"></i>
+                        <i class="fas fa-trash-alt"></i>
+                    </td>
+                </tr>
+            {{-- <li class="list-group-item"><a href="{{ url('/temas/atualizar/'.$tema->id) }}">This is user {{ $tema->nome }}</p></li> --}}
+            @endforeach
+        </tbody>
+          </table>
+@endsection
+{{-- @section('sidebar')
+    @parent
 
-    <!-- Styles -->
-    <style>
+    <p>This is appended to the master sidebar.</p>
+@endsection --}}
 
-    </style>
-</head>
-<body>
-
-<div class="flex-center position-ref full-height">
-    @foreach ($temas as $tema)
-        <a href="{{ url('/temas/atualizar/'.$tema->id) }}"><p>This is user {{ $tema->nome }}</p></a>
-    @endforeach
-    @if (Route::has('login'))
-        <div class="top-right links">
-            @auth
-                <a href="{{ url('/temas/cadastrar') }}">Cadastrar tema</a>
-            @else
-                <a href="{{ route('login') }}">Login</a>
-                <a href="{{ route('register') }}">Register</a>
-            @endauth
-        </div>
-    @endif
-</div>
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
-</div>
-</body>
-</html>

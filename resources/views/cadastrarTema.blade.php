@@ -1,8 +1,3 @@
-<form method="POST" action="/profile">
-    @csrf
-
-    ...
-</form>
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
@@ -76,7 +71,8 @@
         <div class="top-right links">
             @auth
                 <form method="post" action="{{ url('/temas/cadastrar') }}">
-                    {{csrf_field()}}
+                    {{--{{csrf_field()}}--}}
+                    @csrf
                     <input type="text" name="nome">
                     <input type="text" name="descricao">
                     <input type="submit" value="Enviar">

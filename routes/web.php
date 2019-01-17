@@ -26,7 +26,7 @@ Route:: group(['prefix' => 'temas', 'middleware' =>'auth'], function(){
 	Route::post('cadastrar', 'TemaController@cadastrar');
     Route::get('atualizar/{id}', 'TemaController@getViewAtualizar');
     Route::put('atualizar', 'TemaController@atualizar');
-    Route::patch('atualizar', 'TemaController@realizarAtualizacaoParcial');
+    Route::patch('atualizar/{id}', 'TemaController@realizarAtualizacaoParcial');
     Route::delete('/{id}', 'TemaController@deletar');
 });
 Auth::routes();

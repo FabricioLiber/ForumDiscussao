@@ -1,8 +1,3 @@
-<form method="POST" action="/profile">
-    @csrf
-
-    ...
-</form>
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
 <head>
@@ -72,6 +67,26 @@
 <body>
 
 <div class="flex-center position-ref full-height">
+    {{--<p>{{ $tema->nome }}</p>--}}
+    @if (Route::has('login'))
+        <div class="top-right links">
+            @auth
+                <h2>Atualizar informações do ID {{$tema->id}}</h2>
+                <form method="post" action="{{ url('/temas/atualizar/'.$tema->id) }}">
+                    {{--@method('PATCH')--}}
+                    {{ method_field('PATCH') }}
+                    {{csrf_field()}}
+                    <input type="text" name="nome" value="{{ $tema->nome }}">
+                    <input type="text" name="descricao" value="{{ $tema->descricao }}">
+                    <input type="submit" value="Enviar">
+                </form>
+
+            @else
+                <a href="{{ route('login') }}">Login</a>
+                <a href="{{ route('register') }}">Register</a>
+            @endauth
+        </div>
+    @endif
 </div>
 </body>
 </html>

@@ -16,7 +16,8 @@
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">    
+
     <style>
         #navbar-menu {
             background-color: #e3fbe3;
@@ -133,11 +134,11 @@
                         @endauth
                         @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('login') }}"><i class="fas fa-sign-in-alt"></i></a>
-                        </li> 
-                        <li class="nav-item">
                             <a class="nav-link" href="{{ url('register') }}"><i class="fas fa-user-plus"></i></a>
-                        </li>   
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('login') }}"><i class="fas fa-sign-in-alt"></i></a>
+                        </li>  
                         @endguest
                     </ul>
                 </div>
@@ -147,8 +148,12 @@
 
         @yield('content')
     </div>
-
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" 
+        integrity="sha384-vhJnz1OVIdLktyixHY4Uk3OHEwdQqPppqYR8+5mjsauETgLOcEynD9oPHhhz18Nw" crossorigin="anonymous"></script>
 </body>
 </html>

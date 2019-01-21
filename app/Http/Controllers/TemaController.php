@@ -31,28 +31,21 @@ class TemaController extends Controller
         return view('atualizar_tema', ['tema'=>$tema]);
     }
 
-    public function atualizar () {
-
-    }
-
-    public function realizarAtualizacaoParcial (Request $request, $id) {
-        $tema_atual = Tema::find($id);;
-        var_dump($tema_atual);
+    public function atualizar (Request $request, $id) {
+        $tema_atual = Tema::find($id);
         if ($request->filled('nome') and $request->filled('descricao')) {
             if ($tema_atual->nome === $request->input('nome') and $tema_atual->descricao === $request->input('descricao')) {
-                return view('/home');
+                return redirect('/home');
             } else {
-                if (!$tema_atual->nome === $request->input('nome')) {
+                if ($tema_atual->nome !== $request->input('nome'))
                     $tema_atual->nome = $request->input('nome');
-                }
-                if (!$tema_atual->nome === $request->input('nome')) {
-                    $tema_atual = $request->input('descricao');
-                }
+                if ($tema_atual->descricao !== $request->input('descricao'))
+                    $tema_atual->descricao = $request->input('descricao');
                 $tema_atual->save();
-//                return redirect('/temas');
+                return redirect('/temas');
             }
         }
-        return view('/home');
+        return redirect('/home');
     }
 
     public function deletar () {

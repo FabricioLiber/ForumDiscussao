@@ -17,18 +17,14 @@ Route::get('/', function () {
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-Route::get('temas/', 'TemaController@index');
-
-//, 'middleware' =>'auth'
-
 Route:: group(['prefix' => 'temas', 'middleware' =>'auth'], function(){
-//  Route::get('/', 'TemaController@index');
+    Route::get('/', 'TemaController@index');
     Route::get('cadastrar', 'TemaController@getViewCadastrar');
 	Route::post('cadastrar', 'TemaController@cadastrar');
     Route::get('atualizar/{id}', 'TemaController@getViewAtualizar');
     Route::put('atualizar', 'TemaController@atualizar');
-    Route::patch('atualizar/{id}', 'TemaController@realizarAtualizacaoParcial');
-    Route::delete('/{id}', 'TemaController@deletar');
+    Route::patch('atualizar/{id}', 'TemaController@atualizar');
+    Route::delete('deletar/{id}', 'TemaController@deletar');
 });
 Auth::routes();
 

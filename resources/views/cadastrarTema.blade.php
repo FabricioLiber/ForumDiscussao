@@ -71,8 +71,8 @@
         <div class="top-right links">
             @auth
                 <form method="post" action="{{ url('/temas/cadastrar') }}">
-                    {{--{{csrf_field()}}--}}
-                    @csrf
+                    {{csrf_field()}}
+                    {{-- @csrf --}}
                     <input type="text" name="nome">
                     <input type="text" name="descricao">
                     <input type="submit" value="Enviar">

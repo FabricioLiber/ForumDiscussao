@@ -48,7 +48,9 @@ class TemaController extends Controller
         return redirect('/home');
     }
 
-    public function deletar () {
-
+    public function deletar ($id) {
+        $tema = Tema::find($id);
+        $tema->delete();
+        return redirect('/temas');
     }
 }

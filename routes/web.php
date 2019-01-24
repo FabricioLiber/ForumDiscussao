@@ -12,13 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome')->with('temas', App\Tema::all());
 });
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
+Route::get('temas/', 'TemaController@index');
+
 Route:: group(['prefix' => 'temas', 'middleware' =>'auth'], function(){
-    Route::get('/', 'TemaController@index');
     Route::get('cadastrar', 'TemaController@getViewCadastrar');
 	Route::post('cadastrar', 'TemaController@cadastrar');
     Route::get('atualizar/{id}', 'TemaController@getViewAtualizar');

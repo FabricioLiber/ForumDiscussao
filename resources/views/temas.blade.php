@@ -8,7 +8,10 @@
 
 @section('content')
     <div class="container">
-        <h3 class="title-left">Temas</h3>
+        <h3 class="title-left">Temas</h3>        
+        @auth
+        <a href="{{url('temas/cadastrar')}}" id="addTema"><i class="fas fa-plus-circle"></i></a>
+        @endauth
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -41,9 +44,6 @@
                 @endforeach
             </tbody>
         </table>
-        @auth
-        <a href="{{url('temas/cadastrar')}}" id="addTema"><i class="fas fa-plus-circle"></i></a>
-        @endauth
     </div>
 @endsection
 

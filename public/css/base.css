@@ -1,8 +1,7 @@
-body {
+body #app {
     min-width: 100vw;
     min-height: 100vh;
-    /* background-image: linear-gradient(to right bottom, #ecf8ff, #eaf9f9, #eef8f2, #f5f6ee, #fbf4ee); */
-    background-image: linear-gradient(to right, #ecf8ff, #eaf9f9, #eef8f2, #f5f6ee, #fbf4ee);
+    background-color: #F4F4F4;
     background-repeat: no-repeat;
 }
 

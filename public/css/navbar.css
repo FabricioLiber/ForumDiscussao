@@ -1,12 +1,12 @@
 #navbar-menu {
-    background-color: rgb(246, 254, 255);
-    background-image: linear-gradient(to right, #ecf8ff, #eaf9f9, #eef8f2, #f5f6ee, #fbf4ee);
+    background-color: #f4f4f4;
+    /* background-image: linear-gradient(to right, #ecf8ff, #eaf9f9, #eef8f2, #f5f6ee, #fbf4ee); */
     /* font-family: 'Comfortaa', cursive; */
     font-family: 'Bree Serif', serif;
     margin-bottom: 25px;
 }
 #navbar-menu i {
-    border: 2px solid #008B95;
+    border: 2px solid #373737;
     padding: 5px;
     border-radius: 10px;
     transition: all 0.5s;
@@ -15,7 +15,7 @@
     padding: 0px 5px;
 }
 #navbar-menu a:hover {
-    color: #E98E4E;
+    color: #C0B283;
     transition: all 0.5s;
 }
 #app a:link, #app a:hover {
@@ -23,32 +23,32 @@
     text-decoration: none;
 }
 .nav-link {
-    color: #008B95;
+    color: #373737;
     font-size: 1.5em;
 }
 #navbar-menu i:hover {
-    border: 2px solid #E98E4E;
-    background: #E98E4E;
+    border: 2px solid #C0B283;
+    background: #C0B283;
     color: whitesmoke;
 }
 #search {
     justify-content: center;
 }
 button.btn.btn-outline-search {
-    color: #008B95;
-    border-color: #008B95;
+    color: #373737;
+    border-color: #373737;
 }
 
 button.btn.btn-outline-search:hover {
     color: #fff;
-    background-color: #E98E4E;
-    border-color: #E98E4E;
+    background-color: #C0B283;
+    border-color: #C0B283;
     transition: all 0.5s;
 }
 
 .navbar .navbar-brand a {
     font-family: 'Black Ops One', cursive;
     font-size: 1.8em;
-    color: rgb(221, 116, 40);
+    color: #373737;
     float: right;
 }

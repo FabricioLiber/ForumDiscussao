@@ -28,7 +28,7 @@ class TemaController extends Controller
 
     public function getViewAtualizar ($id) {
         $tema = Tema::find($id);
-        return view('atualizar_tema', ['tema'=>$tema]);
+        return view('atualizarTema', ['tema'=>$tema]);
     }
 
     public function atualizar (Request $request, $id) {

@@ -1,0 +1,15 @@
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+    /* background-image: linear-gradient(to right bottom, #ecf8ff, #eaf9f9, #eef8f2, #f5f6ee, #fbf4ee); */
+    background-image: linear-gradient(to right, #ecf8ff, #eaf9f9, #eef8f2, #f5f6ee, #fbf4ee);
+    background-repeat: no-repeat;
+}
+
+h1.title-right, h2.title-right, h3.title-right, h4.title-right, h5.title-right {
+    color: #008B95;
+}
+
+h1.title-left, h2.title-left, h3.title-left, h4.title-left, h5.title-left {
+    color: rgb(221, 116, 40);
+}

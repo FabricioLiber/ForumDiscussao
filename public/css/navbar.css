@@ -1,9 +1,12 @@
 #navbar-menu {
-    background-color: #e3fbe3;
-    font-family: 'Comfortaa', cursive;
+    background-color: rgb(246, 254, 255);
+    background-image: linear-gradient(to right, #ecf8ff, #eaf9f9, #eef8f2, #f5f6ee, #fbf4ee);
+    /* font-family: 'Comfortaa', cursive; */
+    font-family: 'Bree Serif', serif;
+    margin-bottom: 25px;
 }
 #navbar-menu i {
-    border: 2px solid #28a745;
+    border: 2px solid #008B95;
     padding: 5px;
     border-radius: 10px;
     transition: all 0.5s;
@@ -11,21 +14,41 @@
 .navbar-nav > * {
     padding: 0px 5px;
 }
-#navbar-menu a:hover, #navbar-menu a:link{
-    color: #158815;
+#navbar-menu a:hover {
+    color: #E98E4E;
+    transition: all 0.5s;
 }
 #app a:link, #app a:hover {
     outline: none;
     text-decoration: none;
 }
 .nav-link {
-    color: #28a745;
+    color: #008B95;
     font-size: 1.5em;
 }
 #navbar-menu i:hover {
-    background: #28a745;
+    border: 2px solid #E98E4E;
+    background: #E98E4E;
     color: whitesmoke;
 }
 #search {
     justify-content: center;
+}
+button.btn.btn-outline-search {
+    color: #008B95;
+    border-color: #008B95;
+}
+
+button.btn.btn-outline-search:hover {
+    color: #fff;
+    background-color: #E98E4E;
+    border-color: #E98E4E;
+    transition: all 0.5s;
+}
+
+.navbar .navbar-brand a {
+    font-family: 'Black Ops One', cursive;
+    font-size: 1.8em;
+    color: rgb(221, 116, 40);
+    float: right;
 }

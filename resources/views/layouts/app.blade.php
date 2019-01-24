@@ -12,26 +12,31 @@
     <!-- Styles -->
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/base.css') }}" rel="stylesheet">
     @yield('styles')
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" 
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
         integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Black+Ops+One" rel="stylesheet">
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-ligth" id="navbar-menu">
-            <div class="container">
-                <img class="navbar-brand col-lg-2" src="{{asset('img/stackoverflow.png')}}" alt="">
+            {{-- <div class="container"> --}}
+                <div class="navbar-brand col-lg-3">
+                    <a href="{{url('/')}}">Discussion Forum</a>
+                </div>
+                
+                {{-- <img class="navbar-brand col-lg-2" src="{{asset('img/stackoverflow.png')}}" alt=""> --}}
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <form class="form-inline col-lg-6" id="search">
-                    <input class="form-control mr-sm-2 col-lg-8" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-1 my-sm-0" type="submit">Search</button>
+                    <input class="form-control mr-sm-2 col-lg-10" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-search my-1 my-sm-0" type="submit">Search</button>
                 </form>
-                <div class="collapse navbar-collapse col-lg-4" id="opcoes-menu">
+                <div class="collapse navbar-collapse col-lg-3" id="opcoes-menu">
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link" href="/temas">Temas</a>
@@ -54,7 +59,7 @@
                         @endguest
                     </ul>
                 </div>
-            </div>
+            {{-- </div> --}}
         </nav>
         @yield('content')
     </div>

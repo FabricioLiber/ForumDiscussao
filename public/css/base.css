@@ -3,12 +3,24 @@ body #app {
     min-height: 100vh;
     background-color: #F4F4F4;
     background-repeat: no-repeat;
+    font-family: 'Bree Serif', serif;
 }
 
-h1.title-right, h2.title-right, h3.title-right, h4.title-right, h5.title-right {
-    color: #008B95;
+body #app > a:link, body #app a {
+    color: #373737;
+    transition: all 0.5s;
+    outline: none;
+    text-decoration: none;
 }
 
-h1.title-left, h2.title-left, h3.title-left, h4.title-left, h5.title-left {
-    color: rgb(221, 116, 40);
+body #app a:hover {
+    color: #C0B283;
+    outline: none;
+    text-decoration: none;
+}
+
+h1.title, h2.title, h3.title, h4.title, h5.title {
+    color: #373737;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }

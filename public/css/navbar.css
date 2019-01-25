@@ -1,8 +1,4 @@
 #navbar-menu {
-    background-color: #f4f4f4;
-    /* background-image: linear-gradient(to right, #ecf8ff, #eaf9f9, #eef8f2, #f5f6ee, #fbf4ee); */
-    /* font-family: 'Comfortaa', cursive; */
-    font-family: 'Bree Serif', serif;
     margin-bottom: 25px;
 }
 #navbar-menu i {
@@ -14,14 +10,7 @@
 .navbar-nav > * {
     padding: 0px 5px;
 }
-#navbar-menu a:hover {
-    color: #C0B283;
-    transition: all 0.5s;
-}
-#app a:link, #app a:hover {
-    outline: none;
-    text-decoration: none;
-}
+
 .nav-link {
     color: #373737;
     font-size: 1.5em;

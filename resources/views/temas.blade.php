@@ -8,7 +8,7 @@
 
 @section('content')
     <div class="container">
-        <h3 class="title-left">Temas</h3>        
+        <h3 class="title">Temas</h3>        
         @auth
         <a href="{{url('temas/cadastrar')}}" id="addTema"><i class="fas fa-plus-circle"></i></a>
         @endauth
@@ -30,7 +30,7 @@
                         <td>{{$tema->nome}}</td>
                         <td>{{$tema->descricao}}</td>
                         @auth
-                        <td>
+                        <td class="links-table">
                             <a href="{{url('temas/atualizar/'.$tema->id)}}" class="icon-edit"><i class="fas fa-edit"></i></a>
                             <form action="{{url('temas/deletar/'.$tema->id)}}" method="post" style="display: inline;">
                                 {{csrf_field()}}

@@ -21,10 +21,24 @@ $factory->define(App\User::class, function (Faker $faker) {
         'remember_token' => str_random(10),
     ];
 });
-
 $factory->define(App\Tema::class, function (Faker $faker) {
     return [
-        'nome' => $faker->word,
-        'descricao' => $faker->sentence($nbWords = 6, $variableNbWords = true)
+        'nome' => $faker->sentence,
+        'descricao' => $faker->paragraph($nbSentences = 2, $variableNbSentences = true)
+    ];
+});
+$factory->define(App\Postagem::class, function (Faker $faker) {
+    return [
+        'titulo'=>$faker->sentence,
+        'descricao'=>$faker->paragraph($nbSentences = 2, $variableNbSentences = true),
+        'id_tema'=>App\Tema::all()->random()->id,
+        'id_usuario'=>App\User::all()->random()->id,
+    ];
+});
+$factory->define(App\Resposta::class, function (Faker $faker) {
+    return [
+        'descricao'=>$faker->paragraph($nbSentences = 2, $variableNbSentences = true),
+        'id_usuario'=>App\User::all()->random()->id,
+        'id_postagem'=>App\Postagem::all()->random()->id,
     ];
 });

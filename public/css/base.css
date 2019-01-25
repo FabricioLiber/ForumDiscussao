@@ -39,6 +39,14 @@ h1.title, h2.title, h3.title, h4.title, h5.title {
         color: #F4F4F4;
 }
 
+.pagination > .disabled > span,
+    .pagination > .disabled > span:hover,
+    .pagination > .disabled > span:focus,
+    .pagination > .disabled > a,
+    .pagination > .disabled > a:hover,
+    .pagination > .disabled > a:focus {
+        background: rgb(226, 223, 223); 
+}
 
 body #app .pagination {
     justify-content: center;

@@ -29,6 +29,9 @@ Route:: group(['prefix' => 'temas', 'middleware' =>'auth'], function(){
     Route::delete('deletar/{id}', 'TemaController@deletar');
 });
 
+// Rotas de Pesquisa
+Route::get('pesquisar/', 'TemaController@index');
+
 // Rotas de Resposta
 
 Route::get('respostas/', 'TemaController@index');

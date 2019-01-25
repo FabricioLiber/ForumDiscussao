@@ -10,7 +10,7 @@ class PesquisaController extends Controller
     public function index (Request $request)
     {
         if ($request->filled('search'))
-            return view('pesquisar', [])
-        return view('pesquisar', [])
+            return view('pesquisar', []);
+        return view('pesquisar', []);
     }
 }

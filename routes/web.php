@@ -11,11 +11,12 @@
 |
 */
 
+// Rota inicial (Raiz)
 Route::get('/', function () {
     return view('welcome')->with('temas', App\Tema::all());
 });
 
-Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+// Rotas de Tema
 
 Route::get('temas/', 'TemaController@index');
 
@@ -27,6 +28,24 @@ Route:: group(['prefix' => 'temas', 'middleware' =>'auth'], function(){
     Route::patch('atualizar/{id}', 'TemaController@atualizar');
     Route::delete('deletar/{id}', 'TemaController@deletar');
 });
+
+// Rotas de Resposta
+
+Route::get('respostas/', 'TemaController@index');
+
+Route:: group(['prefix' => 'respostas', 'middleware' =>'auth'], function(){
+    Route::get('cadastrar', 'TemaController@getViewCadastrar');
+    Route::post('cadastrar', 'TemaController@cadastrar');
+    Route::get('atualizar/{id}', 'TemaController@getViewAtualizar');
+    Route::put('atualizar/{id}', 'TemaController@atualizar');
+    Route::patch('atualizar/{id}', 'TemaController@atualizar');
+    Route::delete('deletar/{id}', 'TemaController@deletar');
+});
+
+// Rotas de Autenticacao
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');

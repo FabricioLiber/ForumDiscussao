@@ -10,7 +10,7 @@
     <title>@yield('title')</title>
 
     <!-- Styles -->
-    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
     <link href="{{ asset('css/base.css') }}" rel="stylesheet">
     @yield('styles')
@@ -29,11 +29,13 @@
                 </div>
                 
                 {{-- <img class="navbar-brand col-lg-2" src="{{asset('img/stackoverflow.png')}}" alt=""> --}}
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <form class="form-inline col-lg-6" id="search">
-                    <input class="form-control mr-sm-2 col-lg-10" type="search" placeholder="Search" aria-label="Search">
+                <form class="form-inline col-lg-6" id="search" action="pesquisar/">
+                    <input class="form-control mr-sm-2 col-lg-10" type="search" name="search"
+                        placeholder="Pesquise uma postagem" aria-label="Pesquise uma postagem">
                     <button class="btn btn-outline-search my-1 my-sm-0" type="submit">Search</button>
                 </form>
                 <div class="collapse navbar-collapse col-lg-3" id="opcoes-menu">

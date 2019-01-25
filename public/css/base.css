@@ -24,3 +24,30 @@ h1.title, h2.title, h3.title, h4.title, h5.title {
     margin-bottom: 0;
     padding-bottom: 0;
 }
+
+/* Pagination */
+
+.pagination > .active > a,
+    .pagination > .active > a:hover,
+    .pagination > .active > a:focus,
+    .pagination > .active > span,
+    .pagination > .active > span:hover,
+    .pagination > .active > span:focus {
+        background: #373737;
+        border-color: #373737;
+        border-radius: 4px;
+        color: #F4F4F4;
+}
+
+
+body #app .pagination {
+    justify-content: center;
+}
+
+body #app .pagination li a {
+    background: #F4F4F4;
+}
+
+.table > tbody > tr > td.links-table, .table > thead > tr > .links-table-title {
+    min-width: 100px;
+}

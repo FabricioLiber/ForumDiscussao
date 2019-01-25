@@ -10,7 +10,7 @@ class TemaController extends Controller
 {
     //
     public function index () {
-        return view('temas')->with('temas', \App\Tema::all());
+        return view('temas')->with('temas', \App\Tema::paginate(5));
     }
 
     public function getViewCadastrar () {

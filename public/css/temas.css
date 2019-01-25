@@ -24,6 +24,6 @@
     text-align: center;
 }
 
-table tbody tr td.links-table {
+table tbody tr td .icon-trash:hover {
     color: #C0B283;
 }

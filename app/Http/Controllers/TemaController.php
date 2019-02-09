@@ -31,11 +31,11 @@ class TemaController extends Controller
         return view('atualizar_tema', $tema);
     }
 
-    public function atualizar () {
+    public function atualizar (Request $request, $id) {
 
     }
 
-    public function deletar () {
+    public function deletar ($id) {
 
     }
 }

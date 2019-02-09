@@ -26,9 +26,19 @@ Route:: group(['prefix' => 'temas', 'middleware' =>'auth'], function(){
 	Route::post('cadastrar', 'TemaController@cadastrar');
     Route::get('atualizar/{id}', 'TemaController@getViewAtualizar');
     Route::put('atualizar', 'TemaController@atualizar');
-    Route::patch('atualizar', 'TemaController@realizarAtualizacaoParcial');
-    Route::delete('/{id}', 'TemaController@deletar');
+    Route::patch('atualizar/{id}', 'TemaController@realizarAtualizacaoParcial');
+    Route::delete('deletar/{id}', 'TemaController@deletar');
 });
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route:: group(['prefix' => 'respostas', 'middleware' =>'auth'], function(){
+    Route::get('/', 'RespostaController@index');
+    Route::get('cadastrar', 'RespostaController@getViewCadastrar');
+    Route::post('cadastrar', 'RespostaController@cadastrar');
+    Route::get('atualizar/{id}', 'RespostaController@getViewAtualizar');
+    Route::put('atualizar', 'RespostaController@atualizar');
+    Route::patch('atualizar/{id}', 'RespostaController@realizarAtualizacaoParcial');
+    Route::delete('deletar/{id}', 'RespostaController@deletar');
+});

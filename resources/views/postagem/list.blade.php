@@ -8,51 +8,27 @@
 
 @section('content')
     <div class="container">
-        <h3 class="title">Postagens</h3>        
+        <h1 class="title">Postagens</h1>        
         @auth
         <a href="{{url('postagens/cadastrar')}}" id="addPostagem"><i class="fas fa-plus-circle"></i></a>
         @endauth
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Tema</th>
-                    <th scope="col">Descrição</th>
-                    @auth
-                    <th scope="col" class="links-table-title">Opções</th>
-                    @endauth
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($postagens as $postagem)
-                    <div>
-                        <h1>{{$postagem->titulo}}</h1>
-                    </div>
-                    <div>
-                        <h1>{{$postagem->user->name}}</h1>
-                        <p>{{$postagem->tema->nome}}</p>
-                    </div>
-                    <div>
-                        <div>{{$postagem->descricao}}</div>
-                    </div>
-                    <div>
-                    </div>
-
-                    @auth
-                    <td class="links-table">
-                        <a href="{{url('postagems/atualizar/'.$postagem->id)}}" class="icon-edit"><i class="fas fa-edit"></i></a>
-                        <form action="{{url('postagens/deletar/'.$postagem->id)}}" method="post" style="display: inline;">
-                            {{csrf_field()}}
-                            {{ method_field('delete') }}
-                            <button type="submit" id="icon-submit" class="icon-trash"><i class="fas fa-trash-alt"></i></button>
-                        </form>
-                        
-                    </td>
-                    @endauth
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
+        @foreach ($postagens as $postagem)
+            <div class="blog-post">
+                <h2 class="blog-post-title">{{$postagem->titulo}}</h2>
+                <p class="blog-post-meta">{{date("d M Y", $postagem->creat_at)}}, by{{$postagem->user->name}}</p>
+                <p>{{$postagem->tema->nome}}</p>
+                <p>{{$postagem->descricao}}</p>
+                @auth
+                <div class="links-table">
+                    <a href="{{url('postagems/atualizar/'.$postagem->id)}}" class="icon-edit"><i class="fas fa-edit"></i></a>
+                    <form action="{{url('postagens/deletar/'.$postagem->id)}}" method="post" style="display: inline;">
+                        {{csrf_field()}}
+                        {{ method_field('delete') }}
+                        <button type="submit" id="icon-submit" class="icon-trash"><i class="fas fa-trash-alt"></i></button>
+                    </form>
+                </div>
+                @endauth
+            @endforeach
         {{$postagens->render()}}
         {{-- <nav aria-label="Page navigation example">
             <ul class="pagination">

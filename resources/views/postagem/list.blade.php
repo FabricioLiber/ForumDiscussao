@@ -29,8 +29,8 @@
                         <h1>{{$postagem->titulo}}</h1>
                     </div>
                     <div>
-                        <h1>{{$postagem->user()->name}}</h1>
-                        <p>{{$postagem->tema()->nome}}</p>
+                        <h1>{{$postagem->user->name}}</h1>
+                        <p>{{$postagem->tema->nome}}</p>
                     </div>
                     <div>
                         <div>{{$postagem->descricao}}</div>

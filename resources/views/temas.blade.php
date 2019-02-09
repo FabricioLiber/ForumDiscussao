@@ -8,7 +8,10 @@
 
 @section('content')
     <div class="container">
-        <h3 class="title">Temas</h3>
+        <h3 class="title">Temas</h3>        
+        @auth
+        <a href="{{url('temas/cadastrar')}}" id="addTema"><i class="fas fa-plus-circle"></i></a>
+        @endauth
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -16,7 +19,7 @@
                     <th scope="col">Tema</th>
                     <th scope="col">Descrição</th>
                     @auth
-                    <th scope="col">Opções</th>
+                    <th scope="col" class="links-table-title">Opções</th>
                     @endauth
                 </tr>
             </thead>
@@ -27,12 +30,12 @@
                         <td>{{$tema->nome}}</td>
                         <td>{{$tema->descricao}}</td>
                         @auth
-                        <td>
+                        <td class="links-table">
                             <a href="{{url('temas/atualizar/'.$tema->id)}}" class="icon-edit"><i class="fas fa-edit"></i></a>
                             <form action="{{url('temas/deletar/'.$tema->id)}}" method="post" style="display: inline;">
                                 {{csrf_field()}}
                                 {{ method_field('delete') }}
-                                <button type="submit" id="icon-submit"><i class="fas fa-trash-alt"></i></button>
+                                <button type="submit" id="icon-submit" class="icon-trash"><i class="fas fa-trash-alt"></i></button>
                             </form>
                             
                         </td>
@@ -41,7 +44,16 @@
                 @endforeach
             </tbody>
         </table>
-        <a href="{{url('temas/cadastrar')}}" id="addTema"><i class="fas fa-plus-circle"></i></a>
+        {{$temas->render()}}
+        {{-- <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav> --}}
     </div>
 @endsection
 

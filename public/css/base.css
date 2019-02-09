@@ -1,0 +1,61 @@
+body #app {
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: #F4F4F4;
+    background-repeat: no-repeat;
+    font-family: 'Bree Serif', serif;
+}
+
+body #app > a:link, body #app a {
+    color: #373737;
+    transition: all 0.5s;
+    outline: none;
+    text-decoration: none;
+}
+
+body #app a:hover {
+    color: #C0B283;
+    outline: none;
+    text-decoration: none;
+}
+
+h1.title, h2.title, h3.title, h4.title, h5.title {
+    color: #373737;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* Pagination */
+
+.pagination > .active > a,
+    .pagination > .active > a:hover,
+    .pagination > .active > a:focus,
+    .pagination > .active > span,
+    .pagination > .active > span:hover,
+    .pagination > .active > span:focus {
+        background: #373737;
+        border-color: #373737;
+        border-radius: 4px;
+        color: #F4F4F4;
+}
+
+.pagination > .disabled > span,
+    .pagination > .disabled > span:hover,
+    .pagination > .disabled > span:focus,
+    .pagination > .disabled > a,
+    .pagination > .disabled > a:hover,
+    .pagination > .disabled > a:focus {
+        background: rgb(226, 223, 223); 
+}
+
+body #app .pagination {
+    justify-content: center;
+}
+
+body #app .pagination li a {
+    background: #F4F4F4;
+}
+
+.table > tbody > tr > td.links-table, .table > thead > tr > .links-table-title {
+    min-width: 100px;
+}

@@ -10,7 +10,7 @@ class TemaController extends Controller
 {
     //
     public function index () {
-        return view('temas')->with('temas', \App\Tema::all());
+        return view('temas')->with('temas', \App\Tema::paginate(5));
     }
 
     public function getViewCadastrar () {
@@ -28,7 +28,7 @@ class TemaController extends Controller
 
     public function getViewAtualizar ($id) {
         $tema = Tema::find($id);
-        return view('atualizar_tema', ['tema'=>$tema]);
+        return view('atualizarTema', ['tema'=>$tema]);
     }
 
     public function atualizar (Request $request, $id) {

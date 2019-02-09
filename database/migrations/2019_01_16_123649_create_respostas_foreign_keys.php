@@ -16,13 +16,12 @@ class CreateRespostasForeignKeys extends Migration
         Schema::table('respostas', function (Blueprint $table) {
             
             // Foreign Key Users
-            $table->integer('id_usuario');
+            $table->integer('id_usuario')->unsigned();
             $table->foreign('id_usuario')->references('id')->on('users');
 
             // Foreign Key Postagem
-            $table->integer('id_postagem');
+            $table->integer('id_postagem')->unsigned();
             $table->foreign('id_postagem')->references('id')->on('postagens');
-            $table->timestamps();
         });
     }
 

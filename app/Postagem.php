@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Postagem extends Model
 {
     //
+    protected $table='postagens';
+
     public function user () {
         return $this->belongsTo('App\User', 'id_usuario');
     }

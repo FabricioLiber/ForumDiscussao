@@ -1,6 +1,6 @@
 #addTema {
     font-size: 3em;
-    padding: 5px 5%;
+    padding: 5px 4%;
     float: right;
 }
 
@@ -11,9 +11,9 @@
     cursor: pointer;
 }
 
-.icon-edit {
+.icon-edit:hover {
     text-decoration: none;
-    color: black;
+    color: #C0B283;
 }
 
 .title {
@@ -22,4 +22,8 @@
 
 .table {
     text-align: center;
+}
+
+table tbody tr td .icon-trash:hover {
+    color: #C0B283;
 }

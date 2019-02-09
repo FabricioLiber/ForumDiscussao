@@ -1,9 +1,8 @@
 #navbar-menu {
-    background-color: #e3fbe3;
-    font-family: 'Comfortaa', cursive;
+    margin-bottom: 25px;
 }
 #navbar-menu i {
-    border: 2px solid #28a745;
+    border: 2px solid #373737;
     padding: 5px;
     border-radius: 10px;
     transition: all 0.5s;
@@ -11,21 +10,34 @@
 .navbar-nav > * {
     padding: 0px 5px;
 }
-#navbar-menu a:hover, #navbar-menu a:link{
-    color: #158815;
-}
-#app a:link, #app a:hover {
-    outline: none;
-    text-decoration: none;
-}
+
 .nav-link {
-    color: #28a745;
+    color: #373737;
     font-size: 1.5em;
 }
 #navbar-menu i:hover {
-    background: #28a745;
+    border: 2px solid #C0B283;
+    background: #C0B283;
     color: whitesmoke;
 }
 #search {
     justify-content: center;
+}
+button.btn.btn-outline-search {
+    color: #373737;
+    border-color: #373737;
+}
+
+button.btn.btn-outline-search:hover {
+    color: #fff;
+    background-color: #C0B283;
+    border-color: #C0B283;
+    transition: all 0.5s;
+}
+
+.navbar .navbar-brand a {
+    font-family: 'Black Ops One', cursive;
+    font-size: 1.8em;
+    color: #373737;
+    float: right;
 }

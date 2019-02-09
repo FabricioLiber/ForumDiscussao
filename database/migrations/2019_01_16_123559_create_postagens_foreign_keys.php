@@ -17,13 +17,12 @@ class CreatePostagensForeignKeys extends Migration
             //
 
             // Foreign Key User
-            $table->integer('id_usuario');
+            $table->integer('id_usuario')->unsigned();
             $table->foreign('id_usuario')->references('id')->on('users');
 
             // Foreign Key Tema
-            $table->integer('id_tema');
+            $table->integer('id_tema')->unsigned();
             $table->foreign('id_tema')->references('id')->on('temas');
-            $table->timestamps();
         });
     }
 

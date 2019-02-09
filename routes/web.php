@@ -38,9 +38,6 @@ Route:: group(['prefix' => 'postagens','middleware' => 'auth'], function(){
     //Route::get('atualizar/{id}', 'PostagemController')
 });
 
-// Rotas de Pesquisa
-Route::get('pesquisar/', 'TemaController@index');
-
 // Rotas de Resposta
 
 Route::get('respostas/', 'TemaController@index');
@@ -51,13 +48,18 @@ Route:: group(['prefix' => 'respostas', 'middleware' =>'auth'], function(){
     Route::get('atualizar/{id}', 'TemaController@getViewAtualizar');
     Route::put('atualizar/{id}', 'TemaController@atualizar');
     Route::patch('atualizar/{id}', 'TemaController@atualizar');
+    Route::patch('atualizar/{id}', 'TemaController@realizarAtualizacaoParcial');
     Route::delete('deletar/{id}', 'TemaController@deletar');
 });
+
+
+// Rotas de Pesquisa
+Route::get('pesquisar/', 'TemaController@index');
+
 
 // Rotas de Autenticacao
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');

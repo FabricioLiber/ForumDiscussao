@@ -32,6 +32,7 @@ class TemaController extends Controller
     }
 
     public function atualizar (Request $request, $id) {
+
         $tema_atual = Tema::find($id);
         if ($request->filled('nome') and $request->filled('descricao')) {
             if ($tema_atual->nome === $request->input('nome') and $tema_atual->descricao === $request->input('descricao')) {

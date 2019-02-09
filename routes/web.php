@@ -29,6 +29,15 @@ Route:: group(['prefix' => 'temas', 'middleware' =>'auth'], function(){
     Route::delete('deletar/{id}', 'TemaController@deletar');
 });
 
+// Rotas de Postagem
+
+Route::get('postagens/','PostagemController@index');
+Route:: group(['prefix' => 'postagens','middleware' => 'auth'], function(){
+    Route::get('cadastrar', 'PostagemController@getViewCadastrar');
+    Route::post('cadastrar', 'PostagemController@cadastrar');
+    //Route::get('atualizar/{id}', 'PostagemController')
+});
+
 // Rotas de Pesquisa
 Route::get('pesquisar/', 'TemaController@index');
 

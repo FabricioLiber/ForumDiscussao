@@ -44,7 +44,7 @@
                             <a class="nav-link" href="/temas">Temas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/Postagens">Postagens</a>
+                            <a class="nav-link" href="/postagens">Postagens</a>
                         </li>
                         @auth
                         <li class="nav-item">

@@ -18,11 +18,12 @@ class PostagemController extends Controller
 
     public function cadastrar(Request $request){
         $postagem = new Postagem();
+        $postagem->id_usuario = auth()->user()->id;
         $postagem->titulo = $request->input('titulo');
         $postagem->descricao = $request->input('descricao');
-        $tema = $request->input('tema');
-        $postagem->tema = $tema;
-        $postagem->save;
-        return redirect('/postagens');
+        $id_tema = $request->input('tema');
+        $postagem->id_tema = $id_tema;
+        $postagem->save();
+        return redirect('postagem/'.$postagem->id);
     }
 }

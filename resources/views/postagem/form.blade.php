@@ -24,7 +24,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="temaInput">Tema</label>
-                                <select class="form-control" id="temaInput">
+                                <select class="form-control" id="temaInput" name="tema">
                                 @foreach ($temas as $tema)
                                     <option value="{{$tema->id}}">{{$tema->nome}}</option>
                                 @endforeach

@@ -10,7 +10,7 @@
                 <div class="row" style=" justify-content: center; padding: 30px 0px;">
                     <div class="col-lg-6">
                         <h3 class="text-center">Cadastro de Postagem</h3>
-                        <form method="post" action="{{ url('/postagens/cadastrar') }}" class="">
+                        <form method="post" action="{{ url('/postagens/cadastrar') }}">
                             {{csrf_field()}}
                             <div class="form-group">
                                 <label for="tituloInput">Postagem</label>
@@ -29,7 +29,9 @@
                                     <option value="{{$tema->id}}">{{$tema->nome}}</option>
                                 @endforeach
                             </div>
-                            <button type="submit" class="btn btn-primary">Cadastrar</button>
+                            <div class="form-group">
+                                <input type="submit" rows="4" class="btn btn-primary" value="cadastrar">
+                            </div>
                         </form>
                     </div>
                 </div>

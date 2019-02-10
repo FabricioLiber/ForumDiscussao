@@ -20,7 +20,7 @@
                 <p>{{$postagem->descricao}}</p>
                 @auth
                 <div class="links-table">
-                    <a href="{{url('postagems/atualizar/'.$postagem->id)}}" class="icon-edit"><i class="fas fa-edit"></i></a>
+                    <a href="{{url('postagens/atualizar/'.$postagem->id)}}" class="icon-edit"><i class="fas fa-edit"></i></a>
                     <form action="{{url('postagens/deletar/'.$postagem->id)}}" method="post" style="display: inline;">
                         {{csrf_field()}}
                         {{ method_field('delete') }}

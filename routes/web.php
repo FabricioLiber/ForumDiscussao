@@ -35,7 +35,9 @@ Route::get('postagens/','PostagemController@index');
 Route:: group(['prefix' => 'postagens','middleware' => 'auth'], function(){
     Route::get('cadastrar', 'PostagemController@getViewCadastrar');
     Route::post('cadastrar', 'PostagemController@cadastrar');
-    //Route::get('atualizar/{id}', 'PostagemController')
+    Route::get('atualizar/{id}', 'PostagemController@getViewAtualizar');
+    //Route::get('atualizar/{id}', 'PostagemController');
+    //Route::get('atualizar/{id}', 'PostagemController');
 });
 
 // Rotas de Resposta

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Temas')
+@section('title', 'Postagens')
 
 @section('styles')
     <link href="{{ asset('css/temas.css') }}" rel="stylesheet">

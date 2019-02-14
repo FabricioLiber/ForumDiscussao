@@ -9,16 +9,18 @@ use \App\Tema;
 class TemaController extends Controller
 {
     //
-    public function index () {
+    public function index ()
+    {
         return view('temas')->with('temas', \App\Tema::paginate(5));
     }
 
-    public function getViewCadastrar () {
+    public function getViewCadastrar ()
+    {
         return view('cadastrarTema');
     }
 
-    public function cadastrar (Request $request) {
-
+    public function cadastrar (Request $request)
+    {
         $tema = new Tema();
         $tema->nome = $request->input('nome');
         $tema->descricao = $request->input('descricao');
@@ -26,13 +28,14 @@ class TemaController extends Controller
         return redirect('/temas');
     }
 
-    public function getViewAtualizar ($id) {
+    public function getViewAtualizar ($id)
+    {
         $tema = Tema::find($id);
         return view('atualizarTema', ['tema'=>$tema]);
     }
 
-    public function atualizar (Request $request, $id) {
-
+    public function atualizar (Request $request, $id)
+    {
         $tema_atual = Tema::find($id);
         if ($request->filled('nome') and $request->filled('descricao')) {
             if ($tema_atual->nome === $request->input('nome') and $tema_atual->descricao === $request->input('descricao')) {
@@ -49,7 +52,8 @@ class TemaController extends Controller
         return redirect('/home');
     }
 
-    public function deletar ($id) {
+    public function deletar ($id)
+    {
         $tema = Tema::find($id);
         $tema->delete();
         return redirect('/temas');

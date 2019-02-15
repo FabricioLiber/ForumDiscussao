@@ -25,7 +25,7 @@ class PostagemController extends Controller
         $id_tema = $request->input('tema');
         // olhar se está funcionando a atribuição de tema->postagens
         $tema = Tema::find($id_tema);
-        $tema->postagens()->save($tema);
+        $tema->postagens()->save($postagem);
         $postagem->id_tema = $id_tema;
         $postagem->save();
         return redirect('postagem/'.$postagem->id);

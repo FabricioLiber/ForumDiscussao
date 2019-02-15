@@ -56,6 +56,12 @@ class PostagemController extends Controller
         return redirect('/postagens');
     }
 
+    public function detail($id)
+    {
+        $postagem = Postagem::find($id);
+        return view('postagem.detail', ['postagem'=>$postagem]);
+    }
+
     public function deletar ($id) {
         $postagem = Postagem::find($id);
         $postagem->delete();

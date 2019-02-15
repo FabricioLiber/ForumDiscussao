@@ -32,6 +32,7 @@ Route:: group(['prefix' => 'temas', 'middleware' =>'auth'], function(){
 // Rotas de Postagem
 
 Route::get('postagens/','PostagemController@index');
+Route::get('postagem/{id}', 'PostagemController@detail');
 Route:: group(['prefix' => 'postagens','middleware' => 'auth'], function(){
     Route::get('cadastrar', 'PostagemController@getViewCadastrar');
     Route::post('cadastrar', 'PostagemController@cadastrar');

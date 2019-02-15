@@ -3,7 +3,7 @@
 @section('title', 'Cadastrar Tema')
 
 @section('content')
-{{-- style="padding: 50px 0px;" --}}
+    {{-- style="padding: 50px 0px;" --}}
     <div class="container">
         @if (Route::has('login'))
             @auth
@@ -19,13 +19,13 @@
                             <div class="form-group">
                                 <label for="descriptionInput">Descrição</label>
                                 <textarea class="form-control" id="descriptionInput" rows="4" name="descricao"
-                                    placeholder="Ex.: É uma linguagem de programação."></textarea>
+                                          placeholder="Ex.: É uma linguagem de programação."></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Cadastrar</button>
                         </form>
                     </div>
                 </div>
-                
+
             @else
                 <a href="{{ route('login') }}">Login</a>
                 <a href="{{ route('register') }}">Register</a>

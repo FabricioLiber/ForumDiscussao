@@ -11,12 +11,12 @@ class TemaController extends Controller
     //
     public function index ()
     {
-        return view('temas')->with('temas', \App\Tema::paginate(5));
+        return view('tema.list')->with('temas', \App\Tema::paginate(5));
     }
 
     public function getViewCadastrar ()
     {
-        return view('cadastrarTema');
+        return view('tema.form');
     }
 
     public function cadastrar (Request $request)
@@ -31,7 +31,7 @@ class TemaController extends Controller
     public function getViewAtualizar ($id)
     {
         $tema = Tema::find($id);
-        return view('atualizarTema', ['tema'=>$tema]);
+        return view('tema.update', ['tema'=>$tema]);
     }
 
     public function atualizar (Request $request, $id)

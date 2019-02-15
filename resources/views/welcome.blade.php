@@ -7,7 +7,6 @@
 @endsection
 
 @section('content')
-
     <div class="container">
         <div class="row align-content-center">
             <div class="col-lg-9">

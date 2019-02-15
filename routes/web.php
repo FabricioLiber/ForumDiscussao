@@ -19,6 +19,7 @@ Route::get('/', function () {
 // Rotas de Tema
 
 Route::get('temas/', 'TemaController@index');
+Route::get('temas/{id}', 'TemaController@showPostagens');
 
 Route:: group(['prefix' => 'temas', 'middleware' =>'auth'], function(){
     Route::get('cadastrar', 'TemaController@getViewCadastrar');

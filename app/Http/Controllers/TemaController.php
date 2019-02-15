@@ -14,6 +14,14 @@ class TemaController extends Controller
         return view('tema.list')->with('temas', \App\Tema::paginate(5));
     }
 
+    public function showPostagens ($id)
+    {
+        $tema = Tema::find($id);
+//        $teste = $tema->postagens;
+//        var_dump($teste);
+        return view('tema.detail')->with('tema', $tema);
+    }
+
     public function getViewCadastrar ()
     {
         return view('tema.form');

@@ -28,7 +28,7 @@
             @foreach ($temas as $tema)
                 <tr>
                     <th scope="row">{{$tema->id}}</th>
-                    <td>{{$tema->nome}}</td>
+                    <td><a href="{{url('temas/'.$tema->id)}}">{{$tema->nome}}</a></td>
                     <td>{{$tema->descricao}}</td>
                     @auth
                         <td class="links-table">

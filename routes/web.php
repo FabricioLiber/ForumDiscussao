@@ -59,7 +59,7 @@ Route:: group(['prefix' => 'respostas', 'middleware' =>'auth'], function(){
 
 
 // Rotas de Pesquisa
-Route::get('pesquisar/', 'TemaController@index');
+Route::get('search/', 'PesquisaController@index');
 
 
 // Rotas de Autenticacao

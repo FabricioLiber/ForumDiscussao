@@ -31,8 +31,8 @@
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <form class="form-inline col-lg-6" id="search" action="pesquisar/">
-                    <input class="form-control mr-sm-2 col-lg-10" type="search" name="search"
+                <form class="form-inline col-lg-6" id="search" action="{{url('search/')}}">
+                    <input class="form-control mr-sm-2 col-lg-10" type="search" name="q"
                         placeholder="Pesquise uma postagem" aria-label="Pesquise uma postagem">
                     <button class="btn btn-outline-search my-1 my-sm-0" type="submit">Search</button>
                 </form>

@@ -45,16 +45,11 @@ Route:: group(['prefix' => 'postagens','middleware' => 'auth'], function(){
 
 // Rotas de Resposta
 
-Route::get('respostas/', 'TemaController@index');
-
 Route:: group(['prefix' => 'respostas', 'middleware' =>'auth'], function(){
-    Route::get('cadastrar', 'TemaController@getViewCadastrar');
-    Route::post('cadastrar', 'TemaController@cadastrar');
-    Route::get('atualizar/{id}', 'TemaController@getViewAtualizar');
-    Route::put('atualizar/{id}', 'TemaController@atualizar');
-    Route::patch('atualizar/{id}', 'TemaController@atualizar');
-    Route::patch('atualizar/{id}', 'TemaController@realizarAtualizacaoParcial');
-    Route::delete('deletar/{id}', 'TemaController@deletar');
+    Route::post('{id_p}/cadastrar', 'RespostaController@cadastrar');
+    Route::put('{id_p}/atualizar/{id}', 'RespostaController@atualizar');
+    Route::patch('{id_p}/atualizar/{id}', 'RespostaController@atualizar');
+    Route::delete('{id_p}/deletar/{id}', 'RespostaController@deletar');
 });
 
 

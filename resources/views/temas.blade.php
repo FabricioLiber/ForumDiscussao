@@ -7,6 +7,7 @@
 @endsection
 
 @section('content')
+
     <div class="container">
         <h3 class="title">Temas</h3>        
         @auth

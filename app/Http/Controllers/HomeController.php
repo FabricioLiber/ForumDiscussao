@@ -25,12 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        Auth::check()
-
-
         setcookie('emailAnterior', Auth::user()->email, time()+36000);
-
-
         return view('home');
     }
 }

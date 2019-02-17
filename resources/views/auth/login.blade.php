@@ -15,8 +15,12 @@
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-
+                                {{--{{$_COOKIE['email']}}--}}
+                                @if(isset($_COOKIE['emailAnterior']))
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ $_COOKIE['emailAnterior']  }}" required autofocus>
+                                @else
+                                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                                @endif
                                 @if ($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>

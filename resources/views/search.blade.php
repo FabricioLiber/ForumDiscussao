@@ -1,17 +1,16 @@
 @extends('layouts.app')
 
-@section('title', 'Postagens')
-
-@section('styles')
-    <link href="{{ asset('css/temas.css') }}" rel="stylesheet">
-@endsection
+@section('title', 'Pesquisa')
 
 @section('content')
-    <div class="container">
-        <h1 class="title">Postagens</h1>        
-        @auth
-        <a href="{{url('postagens/cadastrar')}}" id="addPostagem"><i class="fas fa-plus-circle"></i></a>
-        @endauth
+    @if(isset($_GET['q']))
+        <h3>Temas relacionados a "{{$_GET['q']}}"</h3>
+        <ul class="list-group">
+            @foreach ($temas as $tema)
+                <li class="list-group-item text-center">{{$tema->nome}}</li>
+            @endforeach
+        </ul>
+        <h3>Posts relacionados a "{{$_GET['q']}}"</h3>
         @foreach ($postagens as $postagem)
             <div class="blog-post">
                 <h2 class="blog-post-title">{{$postagem->titulo}}</h2>
@@ -30,16 +29,8 @@
                 @endif
             </div>
         @endforeach
-        {{$postagens->render()}}
-        {{-- <nav aria-label="Page navigation example">
-            <ul class="pagination">
-              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">Next</a></li>
-            </ul>
-        </nav> --}}
-    </div>
+    @else
+        <h3>Nenhum resultado encontrado para ""</h3>
+    @endif
+    {{--{{$postagens->render()}}--}}
 @endsection
-

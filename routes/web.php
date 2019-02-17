@@ -58,7 +58,6 @@ Route::get('search/', 'PesquisaController@index');
 
 
 // Rotas de Autenticacao
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

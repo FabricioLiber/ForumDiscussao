@@ -10,9 +10,11 @@
     <div class="container">   
         <div class="blog-post">
             <h2 class="blog-post-title">{{$postagem->titulo}}</h2>
+            <hr>
             <p class="blog-post-meta text-right">{{date("d M Y", $postagem->creat_at)}}, by {{$postagem->user->name}}</p>
             <p>{{$postagem->tema->nome}}</p>
             <p>{{$postagem->descricao}}</p>
+            
             @if ($postagem->user == Auth::user())
                 <div class="links-table">
                     <a href="{{url('postagens/atualizar/'.$postagem->id)}}" class="icon-edit"><i class="fas fa-edit"></i></a>
@@ -22,18 +24,18 @@
                         <button type="submit" id="icon-submit" class="icon-trash"><i class="fas fa-trash-alt"></i></button>
                     </form>
                 </div>
+                <hr>
             @endif
             <h3>Respostas</h3>
             @forelse ($postagem->respostas as $resposta)
                 <p>{{$resposta->descricao}}</p>
                 <p class="blog-post-meta ">{{date("d M Y", $resposta->created_at->timestamp)}}, by {{$resposta->user->name}}</p>
                 @if ($resposta->user == Auth::user())
-                    <div class="links-table">
-                        <a href="{{url('respostas/'.$postagem->id.'/atualizar/'.$resposta->id)}}" method="put" class="icon-edit"><i class="fas fa-edit"></i></a>
+                    <div class="links-table" >
                         <form action="{{url('respostas/'.$postagem->id.'/deletar/'.$resposta->id)}}" method="post" style="display: inline;">
                             {{csrf_field()}}
                             {{ method_field('delete') }}
-                            <button type="submit" id="icon-submit" class="icon-trash"><i class="fas fa-trash-alt"></i></button>
+                            <button class="text-right" type="submit" id="icon-submit" class="icon-trash"><i class="fas fa-trash-alt"></i></button>
                         </form>
                     </div>
                 @endif

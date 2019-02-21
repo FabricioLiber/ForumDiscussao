@@ -16,7 +16,7 @@ class CreatePostagensTable extends Migration
         Schema::create('postagens', function (Blueprint $table) {
             $table->increments('id');
             $table->string('titulo');
-            $table->string('descricao');
+            $table->longText('descricao');
             $table->timestamps();
             $table->integer('votos')->nullable(true);
         });

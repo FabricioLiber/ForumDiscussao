@@ -29,7 +29,11 @@
                 <p class="blog-post-meta ">{{date("d M Y", $resposta->creat_at)}}, by {{$resposta->user->name}}</p>
                 @if ($resposta->user == Auth::user())
                     <div class="links-table">
-                        <a href="{{url('respostas/'.$postagem->id.'/atualizar/'.$resposta->id)}}" method="put" class="icon-edit"><i class="fas fa-edit"></i></a>
+                        <form action="{{url('respostas/'.$postagem->id.'/atualizar/'.$resposta->id )}}" method="post" style="display: inline;">
+                            {{csrf_field()}}
+                            {{ method_field('patch')}}
+                            <button type="submit" class="icon-edit"><i class="fas fa-edit"></i></button>
+                        </form>
                         <form action="{{url('respostas/'.$postagem->id.'/deletar/'.$resposta->id)}}" method="post" style="display: inline;">
                             {{csrf_field()}}
                             {{ method_field('delete') }}

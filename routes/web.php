@@ -47,6 +47,8 @@ Route:: group(['prefix' => 'postagens','middleware' => 'auth'], function(){
 
 Route:: group(['prefix' => 'respostas', 'middleware' =>'auth'], function(){
     Route::post('{id_p}/cadastrar', 'RespostaController@cadastrar');
+
+    Route::get('{id_p}/atualizar/{id}', 'RespostaController@getViewAtualizar');
     Route::put('{id_p}/atualizar/{id}', 'RespostaController@atualizar');
     Route::patch('{id_p}/atualizar/{id}', 'RespostaController@atualizar');
     Route::delete('{id_p}/deletar/{id}', 'RespostaController@deletar');

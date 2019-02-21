@@ -20,11 +20,18 @@ class RespostaController extends Controller
         return redirect('postagem/'.$post->id);
     }
 
+    public function getViewAtualizar($id_p, $id){
+        $postagem = Postagem::find($id_p);
+        $resposta = Resposta::find($id);
+        return view('resposta.atualizar', ['postagem'=>$postagem, 'resposta'=>$resposta]);
+    }
+
+
     public function atualizar (Request $req, $id, $id_p) {
         $resposta = Resposta::find($id);
         if ($req->filled('resposta')){
             if ($resposta->descricao === $req->input('resposta')){
-                return redirect('postagem/'.$id_p);
+                return redirect('postagens');
             } else {
                 if ($resposta->descricao !== $req->input('resposta'))
                     $resposta->descricao = $req->input('resposta');

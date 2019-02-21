@@ -33,17 +33,18 @@
                         <th scope="row">{{$tema->id}}</th>
                         <td><a href="{{url('temas/show/'.$tema->id)}}">{{$tema->nome}}</a></td>
                         <td>{{$tema->descricao}}</td>
-                        <td>{{$tema->qtd_postagens}}</td>                      
-                        @if ($tema->user == Auth::user())
-                            <td class="links-table">
+                        <td>{{$tema->qtd_postagens}}</td>
+                        <td class="links-table">
+                            <a href="{{url('temas/show/'.$tema->id)}}" class="icon-edit" style="padding: 0 6px;"><i class="fas fa-search-plus"></i></a>                      
+                            @if ($tema->user == Auth::user())
                                 <a href="{{url('temas/atualizar/'.$tema->id)}}" class="icon-edit"><i class="fas fa-edit"></i></a>
                                 <form action="{{url('temas/deletar/'.$tema->id)}}" method="post" style="display: inline;">
                                     {{csrf_field()}}
                                     {{ method_field('delete') }}
                                     <button type="submit" id="icon-submit" class="icon-trash"><i class="fas fa-trash-alt"></i></button>
-                                </form>
-                            </td>
-                        @endif
+                                </form>                                
+                            @endif
+                        </td>
                     </tr>
             @endforeach
             </tbody>

@@ -3,7 +3,7 @@
 @section('title', 'Welcome')
 
 @section('styles')
-
+    <link rel="stylesheet" href="{{asset('css/welcome.css')}}">
 @endsection
 
 @section('content')
@@ -12,22 +12,24 @@
             <div class="col-lg-8">
                 <h3 class="title">Postagens mais votadas</h3>
                 @foreach ($postagens as $postagem)                    
-                    <div class="row">
+                    <div class="row postagem">
                         <div class="col-lg-2">
-                            {{$postagem->votos}} votos
+                            <p>{{$postagem->votos}}</p>
+                            <p>votos</p>                            
                         </div>
                         <div class="col-lg-2">
-                            {{count($postagem->respostas)}} respostas
+                            <p>{{count($postagem->respostas)}}</p>
+                            <p>respostas</p>
                         </div>
                         <div class="col-lg-8">
                             <div class="row">
                                 <div class="col">
-                                    {{$postagem->titulo}}
+                                    <p>{{$postagem->titulo}}</p>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    {{date("d M Y", $postagem->created_at->timestamp)}}, by {{$postagem->user->name}}
+                                    <p>{{date("d M Y", $postagem->created_at->timestamp)}}, by {{$postagem->user->name}}</p>
                                 </div>
                             </div>
                         </div>

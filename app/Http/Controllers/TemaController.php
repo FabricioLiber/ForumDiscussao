@@ -32,12 +32,16 @@ class TemaController extends Controller
         $tema = new Tema();
         $tema->nome = $request->input('nome');
         $tema->descricao = $request->input('descricao');
+        $tema->id_usuario = auth()->user()->id;
+        $tema->qtd_postagens = 0;
         $tema->save();
+        auth()->user()->temas()->save($tema);
         return redirect('/temas');
     }
 
     public function getViewAtualizar ($id)
     {
+
         $tema = Tema::find($id);
         return view('tema.update', ['tema'=>$tema]);
     }

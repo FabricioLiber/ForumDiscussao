@@ -3,7 +3,6 @@
 @section('title', 'Cadastrar Tema')
 
 @section('content')
-    {{-- style="padding: 50px 0px;" --}}
     <div class="container">
         @if (Route::has('login'))
             @auth

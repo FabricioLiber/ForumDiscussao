@@ -18,6 +18,7 @@ class CreatePostagensTable extends Migration
             $table->string('titulo');
             $table->string('descricao');
             $table->timestamps();
+            $table->integer('votos')->nullable(true);
         });
     }
 

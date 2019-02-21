@@ -18,6 +18,10 @@ class CreateTemasTable extends Migration
             $table->string('nome');
             $table->string('descricao');
             $table->timestamps();
+            $table->integer('qtd_postagens')->nullable(true);
+            // Foreign Key Users
+            $table->integer('id_usuario')->unsigned();
+            $table->foreign('id_usuario')->references('id')->on('users');
         });
     }
 

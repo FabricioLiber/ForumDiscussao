@@ -1,10 +1,8 @@
 body #app {
     min-width: 100vw;
     min-height: 100vh;
-    background-color: #F4F4F4;
     background-repeat: no-repeat;
     font-family: 'Montserrat', sans-serif;
-
 }
 
 body #app > a:link, body #app a {

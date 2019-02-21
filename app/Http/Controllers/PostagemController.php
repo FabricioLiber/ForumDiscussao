@@ -26,7 +26,10 @@ class PostagemController extends Controller
         // olhar se está funcionando a atribuição de tema->postagens
         $tema = Tema::find($id_tema);
         $tema->postagens()->save($postagem);
+        $tema->qtd_postagens++;
+        $tema->save();
         $postagem->id_tema = $id_tema;
+        $postagem->votos = 0;
         $postagem->save();
         return redirect('postagem/'.$postagem->id);
     }

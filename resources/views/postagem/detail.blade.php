@@ -26,7 +26,7 @@
             <h3>Respostas</h3>
             @forelse ($postagem->respostas as $resposta)
                 <p>{{$resposta->descricao}}</p>
-                <p class="blog-post-meta ">{{date("d M Y", $resposta->creat_at)}}, by {{$resposta->user->name}}</p>
+                <p class="blog-post-meta ">{{date("d M Y", $resposta->created_at->timestamp)}}, by {{$resposta->user->name}}</p>
                 @if ($resposta->user == Auth::user())
                     <div class="links-table">
                         <a href="{{url('respostas/'.$postagem->id.'/atualizar/'.$resposta->id)}}" method="put" class="icon-edit"><i class="fas fa-edit"></i></a>

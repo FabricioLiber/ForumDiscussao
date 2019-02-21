@@ -24,7 +24,9 @@ $factory->define(App\User::class, function (Faker $faker) {
 $factory->define(App\Tema::class, function (Faker $faker) {
     return [
         'nome' => $faker->sentence,
-        'descricao' => $faker->paragraph($nbSentences = 2, $variableNbSentences = true)
+        'descricao' => $faker->paragraph($nbSentences = 2, $variableNbSentences = true),
+        'id_usuario'=>App\User::all()->random()->id,
+        'qtd_postagens' => $faker->randomDigitNotNull,
     ];
 });
 $factory->define(App\Postagem::class, function (Faker $faker) {
@@ -33,6 +35,7 @@ $factory->define(App\Postagem::class, function (Faker $faker) {
         'descricao'=>$faker->paragraph($nbSentences = 2, $variableNbSentences = true),
         'id_tema'=>App\Tema::all()->random()->id,
         'id_usuario'=>App\User::all()->random()->id,
+        'votos' => $faker->randomDigitNotNull,
     ];
 });
 $factory->define(App\Resposta::class, function (Faker $faker) {

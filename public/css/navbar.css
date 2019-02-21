@@ -1,5 +1,7 @@
 #navbar-menu {
     margin-bottom: 25px;
+    background-color: #F4F4F4;
+    box-shadow: 0 1px 0 rgba(96,96,96,0.15)
 }
 #navbar-menu i {
     border: 2px solid #373737;

@@ -15,7 +15,7 @@
         @foreach ($postagens as $postagem)
             <div class="blog-post">
                 <h2 class="blog-post-title">{{$postagem->titulo}}</h2>
-                <p class="blog-post-meta text-right">{{date("d M Y", $postagem->creat_at)}}, by {{$postagem->user->name}}</p>
+                <p class="blog-post-meta text-right">{{date("d M Y", $postagem->created_at->timestamp)}}, by {{$postagem->user->name}}</p>
                 <p>{{$postagem->tema->nome}}</p>
                 <p>{{$postagem->descricao}}</p>
                 @if ($postagem->user == Auth::user())

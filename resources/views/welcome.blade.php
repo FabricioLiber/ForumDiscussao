@@ -9,16 +9,38 @@
 @section('content')
     <div class="container">
         <div class="row align-content-center">
-            <div class="col-lg-9">
-                <h3 class="title">Postagens</h3>
+            <div class="col-lg-8">
+                <h3 class="title">Postagens mais votadas</h3>
+                @foreach ($postagens as $postagem)                    
+                    <div class="row">
+                        <div class="col-lg-2">
+                            {{$postagem->votos}} votos
+                        </div>
+                        <div class="col-lg-2">
+                            {{count($postagem->respostas)}} respostas
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="row">
+                                <div class="col">
+                                    {{$postagem->titulo}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    {{date("d M Y", $postagem->created_at->timestamp)}}, by {{$postagem->user->name}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
-            <div class="col-lg-3">
-                <h3 class="title">Temas</h3>
-                <ul class="list-group">
+            <div class="col-lg-4">
+                <h3 class="title">Temas mais comentados</h3>
+                <ol class="list-group">
                     @foreach ($temas as $tema)
                             <li class="list-group-item text-center">{{$tema->nome}}</li>
                     @endforeach
-                </ul>
+                </ol>
             </div>
         </div>
     </div>
